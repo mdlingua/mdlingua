@@ -1,10 +1,10 @@
 <div class="question-container crossed">
   <aside>
-    <ul>
+    <ul class="questions-list">
       <li ng-repeat="q in question.questions"
-          ng-click="question.selectQuestion(q.id)">
+          ng-click="question.selectQuestion(q.id)"
+          ng-class="{answered: q.answered, current: q.id == question.currentQuestion.id}">
         {{ q.title | chooseLang:question.doctorLangauge }}
-        <span ng-show="q.answered">V</span>
       </li>
     </ul>
   </aside>

@@ -87,4 +87,13 @@
       width: 300px;
     }
   }
+
+  .questions-list {
+    .answered {
+      background: red;
+    }
+    .current {
+      background: green;
+    }
+  }
 }
