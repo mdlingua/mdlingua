@@ -1,0 +1,48 @@
+.container {
+  height: 100vh;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.language {
+  width: 225px;
+  border: 2px solid black;
+  text-align: center;
+  vertical-align: middle;
+  line-height: 76px;
+  font-size: 36px;
+  margin-bottom: 16px;
+  text-transform: uppercase;
+  font-family: "Helvetica Neue Light", "HelveticaNeue-Light", "Helvetica Neue", Calibri, Helvetica, Arial;
+  letter-spacing: 1px;
+
+  &.clicked {
+    background-color: #B6C1C7;
+    color: white;
+    border: 2px solid #B6C1C7;
+  }
+}
+
+.logo {
+  height: 136px;
+  width: 136px;
+  margin: auto auto 47px;
+}
+
+.doctor {
+  background-image: image-url('doctor.png');
+  background-size: 136px 136px;
+  background-repeat: no-repeat;
+}
+
+.man {
+  background-image: image-url('man.png');
+  background-size: 136px 136px;
+  background-repeat: no-repeat;
+}
+
+.crossed {
+  background: linear-gradient(61deg, #63CADB 50%, #74D99D 50%);
+  height: 100vh;
+}

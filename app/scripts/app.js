@@ -35,6 +35,11 @@ angular
         controller: 'AboutCtrl',
         controllerAs: 'about'
       })
+      .when('/langauge', {
+        templateUrl: 'views/langauge.html',
+        controller: 'LanguageCtrl',
+        controllerAs: 'langauge'
+      })
       .otherwise({
         redirectTo: '/'
       });

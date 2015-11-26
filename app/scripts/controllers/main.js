@@ -9,8 +9,9 @@
  */
 angular.module('mdlinguaApp')
   .controller('MainCtrl', function () {
+    this.index = 1;
     this.awesomeThings = [
-      'HTML5 Boilerplate',
+      'HTML5 Boilewrplate',
       'AngularJS',
       'Karma'
     ];
