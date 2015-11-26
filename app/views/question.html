@@ -2,25 +2,29 @@
   <aside>
     <ul>
       <li ng-repeat="question in question.questions">
-        {{ question.title | | chooseLang:'en' }}
+        {{ question.title | chooseLang:'en' }}
         <span ng-show="question.answered">V</span>
       </li>
     </ul>
   </aside>
   <section class="question-view">
-    <div class="doctor-text">
-      {{ question.currentQuestion.title | | chooseLang:'en' }}
+    <div class="doctor-text" ng-click="question.read(answer, 'en')">
+      {{ question.currentQuestion.title | chooseLang:'en' }}
     </div>
     <div class="petient">
-      {{ question.currentQuestion.title | | chooseLang:'ru' }}
+      {{ question.currentQuestion.title | chooseLang:'ru' }}
+      <div class="another-radio-logo" ng-click="question.read(question.currentQuestion.title, 'ru')"></div>
     </div>
     <div class="widget" ng-switch on="question.currentQuestion.type">
-      <div ng-switch-when="choice">
+      <div class="switch" ng-switch-when="choice">
         <ul>
           <li class="answer" ng-repeat="answer in question.currentQuestion.answers"
               ng-click="question.choose(answer)">
-            <div class="doctor-text">{{ answer | | chooseLang:'en' }}</div>
-            <div class="petient">{{ answer | | chooseLang:'en' }}</div>
+            <div class="radio-logo" ng-click="question.read(answer, 'ru')"></div>
+            <div class="radio-text">
+              <div class="doctor-text">{{ answer | chooseLang:'en' }}</div>
+              <div class="petient">{{ answer | chooseLang:'ru' }}</div>
+            </div>
           </li>
         </ul>
       </div>
