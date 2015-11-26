@@ -1,11 +1,24 @@
 <div class="container">
   <div class="language-line">
     <div class="logo man"></div>
-    <div class="language" ng-repeat="lang in langauge.languages" ng-click="langauge.state.setPatientLangauge(lang.id)">{{lang.name}}</div>
+    <div class="language"
+         ng-repeat="lang in language.languages"
+         ng-class="{clicked: lang.id == language.state.getPatientLanguage()}"
+         ng-click="language.state.setPatientLanguage(lang.id)">
+      {{lang.name}}
+    </div>
   </div>
 
   <div class="language-line">
     <div class="logo doctor"></div>
-    <div class="language" ng-repeat="lang in langauge.languages" ng-click="langauge.state.setDoctorLangauge(lang.id)">{{lang.name}}</div>
+    <div class="language"
+         ng-repeat="lang in language.languages"
+         ng-class="{clicked: lang.id == language.state.getDoctorLanguage()}"
+         ng-click="language.state.setDoctorLanguage(lang.id)">
+      {{lang.name}}
+    </div>
   </div>
+
+
+  <button ng-click="language.continue()" ng-show="language.bothSelected()">Next</button>
 </div>

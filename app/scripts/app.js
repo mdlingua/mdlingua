@@ -19,34 +19,22 @@ angular
   ])
   .config(function ($routeProvider) {
     $routeProvider
-      .when('/', {
-        templateUrl: 'views/main.html',
-        controller: 'MainCtrl',
-        controllerAs: 'main'
-      })
       .when('/intro', {
         templateUrl: 'views/intro.html',
         controller: 'IntroCtrl',
         controllerAs: 'intro'
+      })
+      .when('/langauge', {
+        templateUrl: 'views/langauge.html',
+        controller: 'LanguageCtrl',
+        controllerAs: 'language'
       })
       .when('/question', {
         templateUrl: 'views/question.html',
         controller: 'QuestionCtrl',
         controllerAs: 'question'
       })
-
-      // Defaults
-      .when('/about', {
-        templateUrl: 'views/about.html',
-        controller: 'AboutCtrl',
-        controllerAs: 'about'
-      })
-      .when('/langauge', {
-        templateUrl: 'views/langauge.html',
-        controller: 'LanguageCtrl',
-        controllerAs: 'langauge'
-      })
       .otherwise({
-        redirectTo: '/'
+        redirectTo: '/intro'
       });
   });

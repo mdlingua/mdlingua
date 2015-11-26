@@ -4,17 +4,23 @@
 /* @ngInject */
 function State() {
   var _this = this;
-  _this.patientLangauge = 'en';
-  _this.doctorLangauge = 'en';
+  _this.patientLangauge = null;
+  _this.doctorLangauge = null;
   _this.questions = [];
   _this.answered = [];
 
   return {
-    setPatientLangauge: function (patientLangauge) {
+    setPatientLanguage: function (patientLangauge) {
       _this.patientLangauge = patientLangauge;
     },
-    setDoctorLangauge: function (doctorLangauge) {
+    setDoctorLanguage: function (doctorLangauge) {
       _this.doctorLangauge = doctorLangauge;
+    },
+    getPatientLanguage: function () {
+      return _this.patientLangauge;
+    },
+    getDoctorLanguage: function () {
+      return _this.doctorLangauge;
     },
     getState: function () {
       return _this;
