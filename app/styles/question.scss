@@ -1,23 +1,58 @@
 .question-container {
-
   display: flex;
 
+  &.crossed {
+    background: linear-gradient(61deg, white 50%, #74D99D 50%);
+    height: 100vh;
+  }
+
+  .doctor-text {
+    font-weight: 500;
+    font-size: 25px;
+    color: grey;
+  }
+
   aside {
-    flex: 1;
+    border: 1px dashed grey;
+    width: 237px;
+    background: lightblue;
+    overflow: hidden;
   }
 
   .question-view {
+    margin: 80px 95px;
     flex: 2;
 
     display: flex;
     flex-direction: column;
+
+    ul {
+      padding-left: 0;
+    }
+    .petient {
+      font-size: 50px;
+    }
 
     header {
       flex: 1;
     }
 
     .widget {
-      flex: 2
+      flex: 2;
+      flex-wrap: wrap;
+    }
+
+    .answer {
+      display: inline-block;
+      list-style-type: none;
+      height: 119px;
+      width: 350px;
+      margin-right: 27px;
+      margin-bottom: 27px;
+      border: 2px solid black;
+      background-color: white;
+      font-size: 25px;
+      padding: 1em;
     }
   }
 }

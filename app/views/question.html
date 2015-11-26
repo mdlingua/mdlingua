@@ -1,22 +1,26 @@
-<div class="question-container">
+<div class="question-container crossed">
   <aside>
     <ul>
       <li ng-repeat="question in question.questions">
-        {{ question.title | chooseLang:'en' }}
+        {{ question.title | | chooseLang:'en' }}
         <span ng-show="question.answered">V</span>
       </li>
     </ul>
   </aside>
   <section class="question-view">
-    <header>
-      <h1>{{ question.currentQuestion.title | chooseLang:'en' }}</h1>
-    </header>
-
+    <div class="doctor-text">
+      {{ question.currentQuestion.title | | chooseLang:'en' }}
+    </div>
+    <div class="petient">
+      {{ question.currentQuestion.title | | chooseLang:'ru' }}
+    </div>
     <div class="widget" ng-switch on="question.currentQuestion.type">
       <div ng-switch-when="choice">
         <ul>
-          <li ng-repeat="answer in question.currentQuestion.answers" ng-click="question.choose(answer)">
-            {{ answer | chooseLang:'en' }}
+          <li class="answer" ng-repeat="answer in question.currentQuestion.answers"
+              ng-click="question.choose(answer)">
+            <div class="doctor-text">{{ answer | | chooseLang:'en' }}</div>
+            <div class="petient">{{ answer | | chooseLang:'en' }}</div>
           </li>
         </ul>
       </div>
