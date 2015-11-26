@@ -1,0 +1,56 @@
+
+[
+  //init
+  //----
+  {
+    "questions": {
+      "0": {
+        "title": "location.hurt",
+        "answers": [
+          "in.head",
+          "in.hand"
+        ],
+        "type": "multiple_choice"
+      },
+      "1": {
+        "title": "location.hurt",
+        "type": "body_image"
+      },
+      "2": {
+        "title": "location.hurt",
+        "type": "scale"
+      }
+    },
+    "categories": {
+      "0": {
+        "title": "heart",
+        "questions": [
+          "0",
+          "1"
+        ]
+      },
+      "1": {
+        "title": "lungs",
+        "questions": [
+          "1",
+          "2"
+        ]
+      }
+    }
+  },
+
+  // state
+  {
+    "patientLanguage": "en",
+    "doctorLanguage": "he",
+    "categories": [
+      "0",
+      "1"
+    ],
+    "answered":{
+      "0": "in.head",
+      "1": "bodyimage.heart",
+      "2": 5
+    }
+  }
+]
