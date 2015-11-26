@@ -8,6 +8,7 @@ angular
 
     function getQuestionForSidebar(question) {
       return {
+        id: question.id,
         title: question.title,
         answered: currentState.answered[question.id] !== undefined
       };
@@ -24,6 +25,10 @@ angular
       return questions[questionId];
     }
 
+    function getQuestion(questionId) {
+      return questions[questionId];
+    }
+
     function fetchNextQuestion() {
       currentQuestion++;
     }
@@ -31,6 +36,7 @@ angular
     return {
       getQuestionsForSidebar: getQuestionsForSidebar,
       getCurrentQuestion: getCurrentQuestion,
-      fetchNextQuestion: fetchNextQuestion
+      fetchNextQuestion: fetchNextQuestion,
+      getQuestion: getQuestion
     };
   });

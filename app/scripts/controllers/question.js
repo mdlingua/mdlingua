@@ -9,18 +9,21 @@
  */
 angular.module('mdlinguaApp')
   .controller('QuestionCtrl', function (questionService, state, tts, $filter, $route) {
+    var _this = this;
+
     this.patientLangauge = state.getPatientLanguage();
     this.doctorLangauge = state.getDoctorLanguage();
     this.questions = questionService.getQuestionsForSidebar();
-
-    var currentQuestion = questionService.getCurrentQuestion();
-    this.currentQuestion = currentQuestion;
+    this.currentQuestion = questionService.getCurrentQuestion();
     this.choose = function (answer) {
-      state.setAnswer(currentQuestion.id, answer);
+      state.setAnswer(_this.currentQuestion.id, answer);
     };
     this.continue = function () {
       questionService.fetchNextQuestion();
       $route.reload();
+    };
+    this.selectQuestion = function (questionId) {
+      _this.currentQuestion = questionService.getQuestion(questionId);
     };
     this.read = function (msg, lang) {
       var chooseLang = $filter('chooseLang');
