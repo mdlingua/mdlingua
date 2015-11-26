@@ -5,6 +5,18 @@
   align-items: center;
 }
 
+.container-b{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+
+  button {
+    position: relative;
+    margin-top: -200px;
+    background-color: transparent;
+  }
+}
+
 .language {
   width: 225px;
   border: 2px solid black;
