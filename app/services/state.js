@@ -4,10 +4,10 @@
 /* @ngInject */
 function State() {
   var _this = this;
-  _this.patientLangauge = null;
-  _this.doctorLangauge = null;
+  _this.patientLangauge = 'en';
+  _this.doctorLangauge = 'en';
   _this.questions = [];
-  _this.answered = [];
+  _this.answered = {};
 
   return {
     setPatientLanguage: function (patientLangauge) {
@@ -24,6 +24,9 @@ function State() {
     },
     getState: function () {
       return _this;
+    },
+    setAnswer: function(questionId, answer) {
+      _this.answered[questionId] = answer;
     }
   };
 }
@@ -31,4 +34,3 @@ function State() {
 angular
   .module('mdlinguaApp')
   .factory('state', State);
-

@@ -8,13 +8,20 @@
  * Controller of the mdlinguaApp
  */
 angular.module('mdlinguaApp')
-  .controller('QuestionCtrl', function (questionService, tts, $filter) {
+  .controller('QuestionCtrl', function (questionService, state, tts, $filter, $route) {
+    this.patientLangauge = state.getPatientLanguage();
+    this.doctorLangauge = state.getDoctorLanguage();
     this.questions = questionService.getQuestionsForSidebar();
-    this.currentQuestion = questionService.getCurrentQuestion();
-    this.choose = function(answer) {
-      console.log(answer);
+
+    var currentQuestion = questionService.getCurrentQuestion();
+    this.currentQuestion = currentQuestion;
+    this.choose = function (answer) {
+      state.setAnswer(currentQuestion.id, answer);
     };
-    this.read = function(msg, lang){
+    this.continue = function () {
+      $route.reload();
+    };
+    this.read = function (msg, lang) {
       var chooseLang = $filter('chooseLang');
       var msg2 = chooseLang(msg, lang);
       tts.read(msg2, lang);

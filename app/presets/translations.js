@@ -23,7 +23,7 @@ angular
       'stab': 'Stabbing',
       'burn': 'Burning',
       'lancinating': 'Lancinating',
-      'squeez': 'Sqeezing',
+      'squeez': 'Squeezing',
       'continuous?': 'Is the pain continuous or intermittent?',
       'continuous': 'continuous',
       'intermittent': 'intermittent',

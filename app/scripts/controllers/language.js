@@ -16,11 +16,7 @@ angular.module('mdlinguaApp')
       {name: "russian", id: "ru"}
     ];
     this.state = state;
-    this.bothSelected = function () {
-      return state.getPatientLanguage() && state.getDoctorLanguage();
-    };
     this.continue = function() {
-      console.log(state.getState());
       $location.url('/question');
     };
   });

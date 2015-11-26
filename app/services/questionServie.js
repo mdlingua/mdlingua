@@ -1,24 +1,14 @@
 angular
   .module('mdlinguaApp')
-  .factory('questionService', function (questions) {
+  .factory('questionService', function (questions, state) {
 
     var questionIds = Object.keys(questions);
-
-    var state = {
-      "patientLanguage": "en",
-      "doctorLanguage": "he",
-      "category": "0",
-      "answered": {
-        "0": "in.head",
-        "3": "bodyimage.heart",
-        "4": 5
-      }
-    };
+    var currentState = state.getState();
 
     function getQuestionForSidebar(question) {
       return {
         title: question.title,
-        answered: state.answered[question.id] !== undefined
+        answered: currentState.answered[question.id] !== undefined
       };
     }
 
@@ -28,8 +18,20 @@ angular
       });
     }
 
+    function getFirstUnanswered() {
+      var questionId;
+      for (var i = 0, l = questionIds.length; i < l; i++) {
+        questionId = questionIds[i];
+        if (!currentState.answered[questionId]) {
+          break;
+        }
+      }
+      return questionId;
+    }
+
     function getCurrentQuestion() {
-      return questions['2'];
+      var firstUnanswered = getFirstUnanswered();
+      return questions[firstUnanswered];
     }
 
     return {

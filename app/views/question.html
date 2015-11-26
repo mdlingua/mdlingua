@@ -1,34 +1,36 @@
 <div class="question-container crossed">
   <aside>
     <ul>
-      <li ng-repeat="question in question.questions">
-        {{ question.title | chooseLang:'en' }}
-        <span ng-show="question.answered">V</span>
+      <li ng-repeat="q in question.questions">
+        {{ q.title | chooseLang:question.doctorLangauge }}
+        <span ng-show="q.answered">V</span>
       </li>
     </ul>
   </aside>
   <section class="question-view">
-    <div class="doctor-text" ng-click="question.read(answer, 'en')">
-      {{ question.currentQuestion.title | chooseLang:'en' }}
+    <div class="doctor-text" ng-click="question.read(answer, question.doctorLangauge)">
+      {{ question.currentQuestion.title | chooseLang:question.doctorLangauge }}
     </div>
     <div class="petient">
-      {{ question.currentQuestion.title | chooseLang:'ru' }}
-      <div class="another-radio-logo" ng-click="question.read(question.currentQuestion.title, 'ru')"></div>
+      {{ question.currentQuestion.title | chooseLang:question.patientLangauge }}
+      <div class="another-radio-logo" ng-click="question.read(question.currentQuestion.title, question.patientLangauge)"></div>
     </div>
     <div class="widget" ng-switch on="question.currentQuestion.type">
       <div class="switch" ng-switch-when="choice">
         <ul>
-          <li class="answer" ng-repeat="answer in question.currentQuestion.answers"
+          <li class="answer"
+              ng-repeat="answer in question.currentQuestion.answers"
               ng-click="question.choose(answer)">
-            <div class="radio-logo" ng-click="question.read(answer, 'ru')"></div>
+            <div class="radio-logo" ng-click="question.read(answer, question.patientLangauge); $event.stopPropagation()"></div>
             <div class="radio-text">
-              <div class="doctor-text">{{ answer | chooseLang:'en' }}</div>
-              <div class="petient">{{ answer | chooseLang:'ru' }}</div>
+              <div class="doctor-text">{{ answer | chooseLang:question.doctorLangauge }}</div>
+              <div class="petient">{{ answer | chooseLang:question.patientLangauge }}</div>
             </div>
           </li>
         </ul>
       </div>
     </div>
+    <button ng-click="question.continue()">Next</button>
   </section>
 
 </div>
