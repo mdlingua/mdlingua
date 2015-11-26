@@ -3,6 +3,7 @@ angular
   .factory('questionService', function (questions, state) {
 
     var questionIds = Object.keys(questions);
+    var currentQuestion = 0;
     var currentState = state.getState();
 
     function getQuestionForSidebar(question) {
@@ -18,24 +19,18 @@ angular
       });
     }
 
-    function getFirstUnanswered() {
-      var questionId;
-      for (var i = 0, l = questionIds.length; i < l; i++) {
-        questionId = questionIds[i];
-        if (!currentState.answered[questionId]) {
-          break;
-        }
-      }
-      return questionId;
+    function getCurrentQuestion() {
+      var questionId = questionIds[currentQuestion];
+      return questions[questionId];
     }
 
-    function getCurrentQuestion() {
-      var firstUnanswered = getFirstUnanswered();
-      return questions[firstUnanswered];
+    function fetchNextQuestion() {
+      currentQuestion++;
     }
 
     return {
       getQuestionsForSidebar: getQuestionsForSidebar,
-      getCurrentQuestion: getCurrentQuestion
+      getCurrentQuestion: getCurrentQuestion,
+      fetchNextQuestion: fetchNextQuestion
     };
   });

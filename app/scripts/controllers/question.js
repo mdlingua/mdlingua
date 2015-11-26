@@ -19,6 +19,7 @@ angular.module('mdlinguaApp')
       state.setAnswer(currentQuestion.id, answer);
     };
     this.continue = function () {
+      questionService.fetchNextQuestion();
       $route.reload();
     };
     this.read = function (msg, lang) {
