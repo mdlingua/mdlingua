@@ -8,11 +8,13 @@
  * Controller of the mdlinguaApp
  */
 angular.module('mdlinguaApp')
-  .controller('LanguageCtrl', function () {
+  .controller('LanguageCtrl', function (state) {
     this.languages = [
-      "english",
-      "hebrew",
-      "hebrew2",
-      "russian"
+      {name: "english", id: "en"},
+      {name: "hebrew", id: "he"},
+      {name: "arabic", id: "ar"},
+      {name: "russian", id: "ru"}
     ];
+    this.state = state;
+    this
   });
