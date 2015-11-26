@@ -16,5 +16,4 @@ angular.module('mdlinguaApp')
       {name: "russian", id: "ru"}
     ];
     this.state = state;
-    this
   });

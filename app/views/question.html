@@ -2,21 +2,21 @@
   <aside>
     <ul>
       <li ng-repeat="question in question.questions">
-        {{ question.title | translate }}
+        {{ question.title | chooseLang:'en' }}
         <span ng-show="question.answered">V</span>
       </li>
     </ul>
   </aside>
   <section class="question-view">
     <header>
-      <h1>{{ question.currentQuestion.title | translate }}</h1>
+      <h1>{{ question.currentQuestion.title | chooseLang:'en' }}</h1>
     </header>
 
     <div class="widget" ng-switch on="question.currentQuestion.type">
       <div ng-switch-when="choice">
         <ul>
           <li ng-repeat="answer in question.currentQuestion.answers" ng-click="question.choose(answer)">
-            {{ answer | translate }}
+            {{ answer | chooseLang:'en' }}
           </li>
         </ul>
       </div>
