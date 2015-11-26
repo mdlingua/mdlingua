@@ -1,0 +1,26 @@
+<div class="question-container">
+  <aside>
+    <ul>
+      <li ng-repeat="question in question.questions">
+        {{ question.title | translate }}
+        <span ng-show="question.answered">V</span>
+      </li>
+    </ul>
+  </aside>
+  <section class="question-view">
+    <header>
+      <h1>{{ question.currentQuestion.title | translate }}</h1>
+    </header>
+
+    <div class="widget" ng-switch on="question.currentQuestion.type">
+      <div ng-switch-when="choice">
+        <ul>
+          <li ng-repeat="answer in question.currentQuestion.answers" ng-click="question.choose(answer)">
+            {{ answer | translate }}
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+</div>
