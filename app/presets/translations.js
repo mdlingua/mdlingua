@@ -61,7 +61,7 @@ angular
       'alcohol?': 'Do you drink alcohol?',
       'exercise?': 'Do you exercise?',
       'medications?': 'Do you take any medications? (Can you show me if you have them with you?)'
-    }
+    },
     ru: {
       'pain?': 'Вы чувствуете боль сейчас?',
       'yes': 'Да',
