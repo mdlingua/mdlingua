@@ -100,8 +100,76 @@
       },
       "11": {
         "id": "11",
-        "type": "time_scale",
-        "title": "past"
+        "type": "extand_if_true",
+        "title": "past_event?"
+      },
+      "12": {
+        "id": "12",
+        "type": "choice",
+        "title": "hypertension?",
+        "answers": [
+          "y_controlled",
+          "y_uncontrolled",
+          "no"
+        ]
+      },
+      "13": {
+        "id": "13",
+        "type": "choice",
+        "title": "diabetes?",
+        "answers": [
+          "y_controlled",
+          "y_uncontrolled",
+          "no"
+        ]
+      },
+      "14": {
+        "id": "14",
+        "type": "choice",
+        "title": "hyperlipidemia?",
+        "answers": [
+          "y_controlled",
+          "y_uncontrolled",
+          "no"
+        ]
+      },
+      "15": {
+        "id": "15",
+        "type": "choice",
+        "title": "background_diseases",
+        "answers": [
+          "val_heart_disease",
+          "AF","Osteoporosis", "Anemia", "Cancer", "Autoimmune_disease", "PVD", "Epilepsy", "Asthma", "COPD", "Hypothyroidism", "Hyperthyroidism"
+        ],
+        "multiple": true
+      },
+      "16": {
+        "id": "16",
+        "type": "extand_if_true",
+        "title": "smoke?"
+      },
+      "17": {
+        "id": "17",
+        "type": "choice",
+        "title": "alcohol?",
+        "answers": [
+          "yes",
+          "no"
+        ]
+      },
+      "18": {
+        "id": "18",
+        "type": "choice",
+        "title": "exercise?",
+        "answers": [
+          "yes",
+          "no"
+        ]
+      },
+      "19": {
+        "id": "19",
+        "type": "free_txt",
+        "title": "medications?"
       }
     },
 

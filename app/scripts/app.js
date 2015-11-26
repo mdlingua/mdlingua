@@ -85,7 +85,30 @@ angular
       "sweating": "sweating",
       "weakness": "weakness",
       "diarrhea": "diarrhea",
-      "palpitations": "palpitations"
+      "palpitations": "palpitations",
+      "past_event?":"Have you felt this kind of pain in the past?"
+      "hypertension?":"Do you suffer from hypertension?"
+      "y_controlled":"yes, controlled",
+      "y_uncontrolled":"yes, uncontrolled",
+      "diabetes?":"Do you suffer from diabetes?",
+      "hyperlipidemia?":"Do you suffer from hyperlipidemia?",
+      "background_diseases":"Do you suffer from any of the following diseases?",
+      "val_heart_disease":"-  Valvular heart disease",
+      "AF":"AF",
+      "Osteoporosis":"Osteoporosis",
+      "Anemia":"Anemia",
+      "Cancer":"Cancer",
+      "Autoimmune_disease":"Autoimmune_disease",
+      "PVD":"PVD",
+      "Epilepsy":"Epilepsy",
+      "Asthma":"Asthma",
+      "COPD":"COPD",
+      "Hypothyroidism":"Hypothyroidism",
+      "Hyperthyroidism":"Hyperthyroidism",
+      "smoke?":"Do you smoke?",
+      "alcohol?":"Do you drink alcohol?",
+      "exercise?":"Do you exercise?",
+      "medications?":"Do you take any medications? (Can you show me if you have them with you?)"
     });
     $translateProvider.preferredLanguage('en');
   });
