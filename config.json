@@ -1,41 +1,171 @@
-
 [
   //init
   //----
   {
     "questions": {
       "0": {
-        "title": "location.hurt",
+        "title": "pain?",
         "answers": [
-          "in.head",
-          "in.hand"
+          "yes",
+          "no",
+          "a_little"
         ],
-        "type": "multiple_choice"
+        "type": "choice"
       },
       "1": {
-        "title": "location.hurt",
-        "type": "body_image"
+        "title": "action_when_started",
+         "answers": [
+          "rest",
+          "exercise",
+          "normal_activity"
+        ],
+        "type": "choice"
       },
       "2": {
-        "title": "location.hurt",
-        "type": "scale"
-      }
+        "title": "making_better?",
+         "answers": [
+          "rest",
+          "lay_down",
+          "lean_fw",
+          "eat",
+          "drugs"
+        ],
+        "type": "choice"
+      },
+      "3": {
+        "title": "making_worse?",
+         "answers": [
+          "exercise",
+          "lay_down",
+          "eat"
+        ],
+        "type": "choice"
+      },
+      "4": {
+        "title": "pain_quality",
+         "answers": [
+          "stab",
+          "burn",
+          "lancinating",
+          "squeez"
+        ],
+        "type": "choice"
+      },
+      "5": {
+        "title": "continuous?",
+         "answers": [
+          "continuous",
+          "intermittent",
+        ],
+        "type": "choice"
+      },
+      "6": {
+        "title": "location_chest",
+        "type": "body_image"
+      },
+      "7": {
+        "title": "location_radiate",
+        "type": "body_image"
+      },
+      "8": {
+        "title": "severity",
+        "type": "scale_1-10"
+      },
+      "9": {
+        "title": "when_started",
+        "type": "time_scale"
+      },
+      "10": {
+        "title": "additional_symptoms",
+         "answers": [
+          "vomiting",
+          "fever",
+          "sweating",
+          "weakness",
+          "diarrhea",
+          "palpitations"
+        ],
+        "type": "coice",
+        "multiple":true
+      },
+      "11": {
+        "title": "past",
+        "type": "time_scale"
+      },
+
+
     },
     "categories": {
       "0": {
-        "title": "heart",
+        "title": "Chest pain",
         "questions": [
           "0",
           "1"
         ]
       },
       "1": {
-        "title": "lungs",
+        "title": "Abdominal pain",
         "questions": [
           "1",
           "2"
         ]
-      }
+      },
+      "2": {
+        "title": "Shortness of breath",
+        "questions": [
+          "1",
+          "2"
+        ]
+      },
+      "3": {
+        "title": "Loss of consciousness",
+        "questions": [
+          "1",
+          "2"
+        ]
+      },
+      "4": {
+        "title": "Weakness / Fatigue",
+        "questions": [
+          "1",
+          "2"
+        ]
+      },
+      "5": {
+        "title": "Vomiting",
+        "questions": [
+          "1",
+          "2"
+        ]
+      },
+      "6": {
+        "title": "Fever",
+        "questions": [
+          "1",
+          "2"
+        ]
+      },
+      "7": {
+        "title": "Weight loss",
+        "questions": [
+          "1",
+          "2"
+        ]
+      },
+      "8": {
+        "title": "Seizures",
+        "questions": [
+          "1",
+          "2"
+        ]
+      },
+      "9": {
+        "title": "Edema",
+        "questions": [
+          "1",
+          "2"
+        ]
+      },
     }
   },
 
@@ -47,7 +177,7 @@
       "0",
       "1"
     ],
-    "answered":{
+    "answered": {
       "0": "in.head",
       "1": "bodyimage.heart",
       "2": 5
