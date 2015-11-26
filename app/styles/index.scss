@@ -1,6 +1,22 @@
 @import "./fragments/language.scss";
 @import "question";
 
-body{
+body {
   font-family: "Helvetica Neue Light", "HelveticaNeue-Light", "Helvetica Neue", Calibri, Helvetica, Arial;
+}
+
+.mdlingua-logo {
+  margin: auto;
+  background-image: image-url('HELLO.png');
+  background-size: 228px 112px;
+  background-repeat: no-repeat;
+  height: 112px;
+  width: 228px;
+}
+
+.logo-container{
+  display: flex;
+  height: 100vh;
+  width: 100vp;
+  background-color: white;
 }
