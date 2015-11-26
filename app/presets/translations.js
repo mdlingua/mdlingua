@@ -60,7 +60,12 @@ angular
       'smoke?': 'Do you smoke?',
       'alcohol?': 'Do you drink alcohol?',
       'exercise?': 'Do you exercise?',
-      'medications?': 'Do you take any medications? (Can you show me if you have them with you?)'
+      'medications?': 'Do you take any medications? (Can you show me if you have them with you?)',
+
+      'thanx': 'Thank you very much for your patience',
+      'admit':'I want to admit you for further investigation',
+      'blood_test':'I need to take blood test',
+      'stress_test':'I want you to do a stress test'
     },
     ru: {
       'pain?': 'Вы чувствуете боль сейчас?',
@@ -119,5 +124,10 @@ angular
       'alcohol?': 'ты пьешь алкоголь?',
       'exercise?': 'Ты занимаешься?',
       'medications?': 'Вы принимаете какие-нибудь лекарства? (Можете ли вы показать мне, если они у вас есть с вами?)'
+
+      'thanx': 'Спасибо вам большое за ваше терпение',
+      'admit':'Я хочу, чтобы признать вас для дальнейшего расследования',
+      'blood_test':'Мне нужно, чтобы принять анализ крови',
+      'stress_test':'Я хочу, чтобы ты стресс-тест'
     }
   });
