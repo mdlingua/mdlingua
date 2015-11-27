@@ -29,10 +29,20 @@ angular
         controller: 'LanguageCtrl',
         controllerAs: 'language'
       })
+      .when('/patient-details', {
+        templateUrl: 'views/patient-details.html',
+        controller: 'PatientDetailsCtrl',
+        controllerAs: 'patientDetails'
+      })
       .when('/complaint', {
         templateUrl: 'views/complaint.html',
         controller: 'ComplaintCtrl',
         controllerAs: 'complaint'
+      })
+      .when('/get-ready', {
+        templateUrl: 'views/get-ready.html',
+        controller: 'GetReadyCtrl',
+        controllerAs: 'getReady'
       })
       .when('/question', {
         templateUrl: 'views/question.html',

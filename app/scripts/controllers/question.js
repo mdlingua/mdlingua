@@ -8,7 +8,7 @@
  * Controller of the mdlinguaApp
  */
 angular.module('mdlinguaApp')
-  .controller('QuestionCtrl', function (questionService, state, tts, $filter, $route) {
+  .controller('QuestionCtrl', function (questionService, state, tts, $filter, $route, $location) {
     var _this = this;
 
     this.patientLanguage = state.getPatientLanguage();
@@ -19,8 +19,11 @@ angular.module('mdlinguaApp')
       state.setAnswer(_this.currentQuestion.id, answer);
     };
     this.continue = function () {
-      questionService.fetchNextQuestion();
+      state.fetchNextQuestion();
       $route.reload();
+    };
+    this.finish = function () {
+      $location.url('/conclusion');
     };
     this.selectQuestion = function (questionId) {
       _this.currentQuestion = questionService.getQuestion(questionId);
