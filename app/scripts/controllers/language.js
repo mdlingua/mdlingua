@@ -11,7 +11,7 @@ angular.module('mdlinguaApp')
   .controller('LanguageCtrl', function ($location, state) {
     this.languages = [
       {name: "english", id: "en"},
-      {name: "hebrew", id: "he"},
+      {name: "amharic", id: "he"},
       {name: "arabic", id: "ar"},
       {name: "russian", id: "ru"}
     ];
