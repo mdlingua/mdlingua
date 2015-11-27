@@ -9,12 +9,12 @@
     </ul>
   </aside>
   <section class="question-view">
-    <div class="doctor-text" ng-click="question.read(answer, question.doctorLanguage)">
+    <div class="doctor-text">
       {{ question.currentQuestion.title | chooseLang:question.doctorLanguage }}
     </div>
     <div class="petient">
       {{ question.currentQuestion.title | chooseLang:question.patientLanguage }}
-      <div class="another-radio-logo" ng-click="question.read(question.currentQuestion.title, question.patientLanguage)"></div>
+      <div class="another-radio-logo" ng-click="question.read(question.currentQuestion.title)"></div>
     </div>
     <div class="widget" ng-switch on="question.currentQuestion.type">
       <div class="switch" ng-switch-when="choice">
@@ -23,7 +23,7 @@
               ng-repeat="answer in question.currentQuestion.answers"
               ng-click="question.choose(answer)"
               ng-class="{selected: question.isAnswerSelected(answer)}">
-            <div class="radio-logo" ng-click="question.read(answer, question.patientLanguage); $event.stopPropagation()"></div>
+            <div class="radio-logo" ng-click="question.read(answer); $event.stopPropagation()"></div>
             <div class="radio-text">
               <div class="doctor-text">{{ answer | chooseLang:question.doctorLanguage }}</div>
               <div class="petient">{{ answer | chooseLang:question.patientLanguage }}</div>

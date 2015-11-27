@@ -28,10 +28,8 @@ angular.module('mdlinguaApp')
     this.selectQuestion = function (questionId) {
       _this.currentQuestion = questionService.getQuestion(questionId);
     };
-    this.read = function (msg, lang) {
-      var chooseLang = $filter('chooseLang');
-      var msg2 = chooseLang(msg, lang);
-      tts.read(msg2, lang);
+    this.read = function (msg) {
+      tts.read(msg);
     };
     this.isAnswerSelected = function (answer) {
       return answer == state.getAnswer(_this.currentQuestion.id);

@@ -1,7 +1,11 @@
 <h1>Conclusion</h1>
 <ul>
-  <li>A</li>
-  <li>B</li>
-  <li>C</li>
+  <li ng-repeat="sentence in conclusion.sentences">
+    <div class="doctor-text">{{ sentence | chooseLang:conclusion.doctorLanguage }}</div>
+    <div class="petient">
+      {{ sentence | chooseLang:conclusion.patientLanguage }}
+      <div class="another-radio-logo" ng-click="conclusion.read(sentence)">(Read)</div>
+    </div>
+  </li>
 </ul>
 <p><a href="/#/report">Doctor's report</a></p>
