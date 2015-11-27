@@ -14,14 +14,15 @@
 
   aside {
     border: 1px dashed grey;
-    width: 237px;
+    //width: 237px;
+    flex: 1;
     background: lightblue;
     overflow: hidden;
   }
 
   .question-view {
     margin: 80px 95px;
-    flex: 2;
+    flex: 3;
 
     display: flex;
     flex-direction: column;

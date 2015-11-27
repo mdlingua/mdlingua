@@ -16,7 +16,4 @@ angular.module('mdlinguaApp')
       {name: "russian", id: "ru"}
     ];
     this.state = state;
-    this.continue = function() {
-      $location.url('/complaint');
-    };
   });
