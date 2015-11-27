@@ -7,8 +7,6 @@
 
 .container-b{
   display: flex;
-  justify-content: space-around;
-  align-items: center;
 
   button {
     position: relative;
@@ -21,6 +19,12 @@
     right: 10px;
     bottom: 10px;
   }
+}
+
+.container-c{
+  position: absolute;
+  right: 50px;
+  bottom: 25px;
 }
 
 .language {
