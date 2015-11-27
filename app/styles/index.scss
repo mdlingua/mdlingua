@@ -13,11 +13,11 @@ body {
 
 .mdlingua-logo {
   margin: auto;
-  background-image: image-url('HELLO.png');
-  background-size: 228px 112px;
+  background-image: image-url('logo.png');
+  background-size: 290px 123px;
   background-repeat: no-repeat;
-  height: 112px;
-  width: 228px;
+  height: 123px;
+  width: 290px;
 }
 
 .logo-container{
@@ -25,4 +25,13 @@ body {
   height: 100vh;
   width: 100vp;
   background-color: white;
+}
+
+.doctor-report{
+  margin: auto;
+  background-image: image-url('page_3-8.png');
+  background-size: 1254px 837px;
+  background-repeat: no-repeat;
+  height: 837px;
+  width: 1254px;
 }
