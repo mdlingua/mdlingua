@@ -39,6 +39,17 @@ angular
         controller: 'QuestionCtrl',
         controllerAs: 'question'
       })
+      .when('/conclusion', {
+        templateUrl: 'views/conclusion.html',
+        controller: 'ConclusionCtrl',
+        controllerAs: 'conclusion'
+      })
+      .when('/report', {
+        templateUrl: 'views/report.html',
+        controller: 'ReportCtrl',
+        controllerAs: 'report'
+      })
+
       .otherwise({
         redirectTo: '/intro'
       });

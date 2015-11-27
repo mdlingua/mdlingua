@@ -3,33 +3,39 @@
 
 /* @ngInject */
 function State() {
-  var _this = this;
-  _this.patientLanguage = 'en';
-  _this.doctorLanguage = 'en';
-  _this.questions = [];
-  _this.answered = {};
+  var defaultState = {
+    patientLanguage: 'en',
+    doctorLanguage: 'en',
+    questions: [],
+    answered: {}
+  };
+
+  var state = Object.create(defaultState);
 
   return {
     setPatientLanguage: function (patientLanguage) {
-      _this.patientLanguage = patientLanguage;
+      state.patientLanguage = patientLanguage;
     },
     setDoctorLanguage: function (doctorLanguage) {
-      _this.doctorLanguage = doctorLanguage;
+      state.doctorLanguage = doctorLanguage;
     },
     getPatientLanguage: function () {
-      return _this.patientLanguage;
+      return state.patientLanguage;
     },
     getDoctorLanguage: function () {
-      return _this.doctorLanguage;
+      return state.doctorLanguage;
     },
     getState: function () {
-      return _this;
+      return state;
     },
     setAnswer: function(questionId, answer) {
-      _this.answered[questionId] = answer;
+      state.answered[questionId] = answer;
     },
     getAnswer: function(questionId) {
-      return _this.answered[questionId];
+      return state.answered[questionId];
+    },
+    reset: function () {
+      state = Object.create(defaultState);
     }
   };
 }
