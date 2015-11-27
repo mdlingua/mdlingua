@@ -17,6 +17,6 @@ angular.module('mdlinguaApp')
     ];
     this.state = state;
     this.continue = function() {
-      $location.url('/question');
+      $location.url('/complaint');
     };
   });

@@ -11,8 +11,8 @@ angular.module('mdlinguaApp')
   .controller('QuestionCtrl', function (questionService, state, tts, $filter, $route) {
     var _this = this;
 
-    this.patientLangauge = state.getPatientLanguage();
-    this.doctorLangauge = state.getDoctorLanguage();
+    this.patientLanguage = state.getPatientLanguage();
+    this.doctorLanguage = state.getDoctorLanguage();
     this.questions = questionService.getQuestionsForSidebar();
     this.currentQuestion = questionService.getCurrentQuestion();
     this.choose = function (answer) {
@@ -29,5 +29,8 @@ angular.module('mdlinguaApp')
       var chooseLang = $filter('chooseLang');
       var msg2 = chooseLang(msg, lang);
       tts.read(msg2, lang);
-    }
+    };
+    this.isAnswerSelected = function (answer) {
+      return answer == state.getAnswer(_this.currentQuestion.id);
+    };
   });

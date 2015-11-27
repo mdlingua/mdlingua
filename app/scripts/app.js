@@ -24,10 +24,15 @@ angular
         controller: 'IntroCtrl',
         controllerAs: 'intro'
       })
-      .when('/langauge', {
-        templateUrl: 'views/langauge.html',
+      .when('/language', {
+        templateUrl: 'views/language.html',
         controller: 'LanguageCtrl',
         controllerAs: 'language'
+      })
+      .when('/complaint', {
+        templateUrl: 'views/complaint.html',
+        controller: 'ComplaintCtrl',
+        controllerAs: 'complaint'
       })
       .when('/question', {
         templateUrl: 'views/question.html',

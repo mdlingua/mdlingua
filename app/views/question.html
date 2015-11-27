@@ -4,31 +4,35 @@
       <li ng-repeat="q in question.questions"
           ng-click="question.selectQuestion(q.id)"
           ng-class="{answered: q.answered, current: q.id == question.currentQuestion.id}">
-        {{ q.title | chooseLang:question.doctorLangauge }}
+        {{ q.title | chooseLang:question.doctorLanguage }}
       </li>
     </ul>
   </aside>
   <section class="question-view">
-    <div class="doctor-text" ng-click="question.read(answer, question.doctorLangauge)">
-      {{ question.currentQuestion.title | chooseLang:question.doctorLangauge }}
+    <div class="doctor-text" ng-click="question.read(answer, question.doctorLanguage)">
+      {{ question.currentQuestion.title | chooseLang:question.doctorLanguage }}
     </div>
     <div class="petient">
-      {{ question.currentQuestion.title | chooseLang:question.patientLangauge }}
-      <div class="another-radio-logo" ng-click="question.read(question.currentQuestion.title, question.patientLangauge)"></div>
+      {{ question.currentQuestion.title | chooseLang:question.patientLanguage }}
+      <div class="another-radio-logo" ng-click="question.read(question.currentQuestion.title, question.patientLanguage)"></div>
     </div>
     <div class="widget" ng-switch on="question.currentQuestion.type">
       <div class="switch" ng-switch-when="choice">
         <ul>
           <li class="answer"
               ng-repeat="answer in question.currentQuestion.answers"
-              ng-click="question.choose(answer)">
-            <div class="radio-logo" ng-click="question.read(answer, question.patientLangauge); $event.stopPropagation()"></div>
+              ng-click="question.choose(answer)"
+              ng-class="{selected: question.isAnswerSelected(answer)}">
+            <div class="radio-logo" ng-click="question.read(answer, question.patientLanguage); $event.stopPropagation()"></div>
             <div class="radio-text">
-              <div class="doctor-text">{{ answer | chooseLang:question.doctorLangauge }}</div>
-              <div class="petient">{{ answer | chooseLang:question.patientLangauge }}</div>
+              <div class="doctor-text">{{ answer | chooseLang:question.doctorLanguage }}</div>
+              <div class="petient">{{ answer | chooseLang:question.patientLanguage }}</div>
             </div>
           </li>
         </ul>
+      </div>
+      <div ng-switch-when="scale_1-10">
+        <input type="range" min="1" max="10" />
       </div>
     </div>
 
