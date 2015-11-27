@@ -1,8 +1,11 @@
 @import "./fragments/language.scss";
 @import "question";
+@import "scale";
 
 body {
   font-family: "Helvetica Neue Light", "HelveticaNeue-Light", "Helvetica Neue", Calibri, Helvetica, Arial;
+  padding: 0;
+  margin: 0;
 }
 
 .mdlingua-logo {
