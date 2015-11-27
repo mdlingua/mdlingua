@@ -1,0 +1,14 @@
+@import "buttons";
+
+.complaint {
+  text-align: center;
+  padding-top: 50px;
+
+  ul {
+    list-style: none;
+
+    li {
+      padding-bottom: 10px;
+    }
+  }
+}

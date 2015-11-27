@@ -1,0 +1,22 @@
+@import "buttons";
+
+.patient-details {
+  text-align: center;
+  padding-top: 100px;
+
+  input {
+    width: 50%;
+    padding: 15px;
+    border: 2px solid #777;
+    background: rgba(255, 255, 255, 0.5);
+    font-size: 22px;
+  }
+
+  .gender button {
+    @extend .my-button;
+  }
+
+  .age {
+    width: 100px;
+  }
+}

@@ -1,6 +1,9 @@
 @import "./fragments/language.scss";
 @import "question";
 @import "scale";
+@import "patient-details";
+@import "complaint";
+@import "get-ready";
 
 body {
   font-family: "Helvetica Neue Light", "HelveticaNeue-Light", "Helvetica Neue", Calibri, Helvetica, Arial;

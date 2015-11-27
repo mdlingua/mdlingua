@@ -1,0 +1,18 @@
+.get-ready {
+  text-align: center;
+  padding-top: 100px;
+
+  h1, h2 {
+    width: 50%;
+    padding: 10px;
+    border: 2px solid #777;
+    text-transform: uppercase;
+    margin: 20px auto;
+    font-weight: normal;
+    background: rgba(255, 255, 255, 0.6);
+  }
+
+  .start {
+    background: rgba(255, 255, 255, 0.8);
+  }
+}

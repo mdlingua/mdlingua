@@ -12,8 +12,14 @@
 
   button {
     position: relative;
-    margin-top: -200px;
+    margin-top: -300px;
     background-color: transparent;
+  }
+
+  .next-button {
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
   }
 }
 
