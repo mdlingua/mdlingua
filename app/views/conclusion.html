@@ -1,10 +1,12 @@
 <h1>Conclusion</h1>
-<ul>
-  <li ng-repeat="sentence in conclusion.sentences">
-    <div class="doctor-text">{{ sentence | chooseLang:conclusion.doctorLanguage }}</div>
-    <div class="petient">
-      {{ sentence | chooseLang:conclusion.patientLanguage }}
-      <div class="another-radio-logo" ng-click="conclusion.read(sentence)">(Read)</div>
+<ul class="question-container question-view">
+  <li class="answer" ng-repeat="sentence in conclusion.sentences">
+    <div class="radio-logo" ng-click="conclusion.read(sentence); $event.stopPropagation()"></div>
+    <div class="radio-text-2">
+      <div class="doctor-text">{{ sentence | chooseLang:conclusion.doctorLanguage }}</div>
+      <div class="petient">
+        {{ sentence | chooseLang:conclusion.patientLanguage }}
+      </div>
     </div>
   </li>
 </ul>

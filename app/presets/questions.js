@@ -65,16 +65,6 @@ angular
         'intermittent'
       ]
     },
-    '6': {
-      'id': '6',
-      'type': 'body_image',
-      'title': 'location_chest'
-    },
-    '7': {
-      'id': '7',
-      'type': 'body_image',
-      'title': 'location_radiate'
-    },
     '8': {
       'id': '8',
       'type': 'scale_1-10',

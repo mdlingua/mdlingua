@@ -1,5 +1,12 @@
 .scale {
-
+  margin-top:25px;
+  
+  button{
+    width: 80px;
+    height: 80px;
+    margin: 10px;
+    font-size: 35px;
+  }
   .selected {
     border: 5px solid blue;
   }
