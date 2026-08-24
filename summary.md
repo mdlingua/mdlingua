@@ -1,4 +1,4 @@
-# mdlingua Repository Structure Summary
+# MDLingua
 
 ## Overview
 `mdlingua` is an AngularJS-based web application for multilingual medical communication. It allows patients to interact with medical questionnaires in their preferred language, with support for text-to-speech and structured reporting.
@@ -27,7 +27,7 @@
 
 ## Directory Layout
 
-### `app/` — Main Application Source
+### `app/` – Main Application Source
 The core front-end application built with AngularJS.
 
 | Path | Description |
@@ -37,7 +37,7 @@ The core front-end application built with AngularJS.
 | `app/favicon.ico` | Browser tab icon |
 | `app/robots.txt` | Search engine crawler rules |
 
-#### `app/scripts/` — JavaScript Logic
+#### `app/scripts/` – JavaScript Logic
 | Path | Description |
 |------|-------------|
 | `app/scripts/app.js` | AngularJS app module definition and routing |
@@ -49,7 +49,7 @@ The core front-end application built with AngularJS.
 | `app/scripts/controllers/patient-details.js` | Controller for capturing patient information |
 | `app/scripts/controllers/question.js` | Controller for questionnaire interaction |
 | `app/scripts/controllers/report.js` | Controller for generating the medical report |
-| `app/scripts/services/questionServie.js` | Service for managing questions logic |
+| `app/scripts/services/questionService.js` | Service for managing questions logic |
 | `app/scripts/services/state.js` | Service for managing application state |
 | `app/scripts/services/tts.js` | Text-to-speech service |
 
@@ -58,7 +58,7 @@ The core front-end application built with AngularJS.
 |------|-------------|
 | `app/filters/chooseLang.js` | AngularJS filter for language selection logic |
 
-#### `app/views/` — HTML Templates
+#### `app/views/` – HTML Templates
 | Path | Description |
 |------|-------------|
 | `app/views/complaint.html` | Complaint entry screen template |
@@ -70,7 +70,7 @@ The core front-end application built with AngularJS.
 | `app/views/question.html` | Question/questionnaire screen template |
 | `app/views/report.html` | Medical report screen template |
 
-#### `app/styles/` — SCSS Stylesheets
+#### `app/styles/` – SCSS Stylesheets
 | Path | Description |
 |------|-------------|
 | `app/styles/main.scss` | Primary stylesheet entry point |
@@ -83,7 +83,7 @@ The core front-end application built with AngularJS.
 | `app/styles/scale.scss` | Scale/rating component styles |
 | `app/styles/fragments/_language.scss` | Language fragment partial styles |
 
-#### `app/images/` — Static Assets
+#### `app/images/` – Static Assets
 | Path | Description |
 |------|-------------|
 | `app/images/logo.png` | Application logo |
@@ -94,7 +94,7 @@ The core front-end application built with AngularJS.
 | `app/images/page_3-8.png` | Page illustration |
 | `app/images/yeoman.png` | Yeoman scaffolding artifact |
 
-#### `app/presets/` — Data Presets
+#### `app/presets/` – Data Presets
 | Path | Description |
 |------|-------------|
 | `app/presets/questions.js` | Predefined medical questions dataset |
@@ -102,7 +102,7 @@ The core front-end application built with AngularJS.
 
 ---
 
-### `test/` — Test Suite
+### `test/` – Test Suite
 Unit tests using Karma and Jasmine.
 
 | Path | Description |
