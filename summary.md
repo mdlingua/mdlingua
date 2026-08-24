@@ -1,83 +1,88 @@
 # mdlingua — Repository Summary
 
 ## Overview
-**mdlingua** is an AngularJS web application scaffolded with [Yeoman's Angular Generator](https://github.com/yeoman/generator-angular) (v0.14.0). It appears to be a multilingual, multi-step interactive application designed to facilitate structured medical question-and-answer sessions — supporting communication between patients and doctors across different languages.
-
----
-
-## Tech Stack
-| Technology | Purpose |
-|---|---|
-| AngularJS | Frontend MVC framework |
-| Yeoman (yo angular) | Project scaffolding |
-| Grunt | Build, serve, and test automation |
-| Karma | Unit test runner |
-| Bower | Frontend dependency management |
-| SCSS | Stylesheet preprocessing |
+**mdlingua** is a multi-step, multilingual interactive web application built with **AngularJS**, scaffolded using the [Yeoman Angular Generator](https://github.com/yeoman/generator-angular) (v0.14.0). It is designed for structured **medical question-and-answer sessions**, supporting multiple languages and producing summarized reports.
 
 ---
 
 ## Repository Structure
 
 ```
-mdlingua/
-├── app/                        # Main application source
-│   ├── index.html              # App entry point
-│   ├── 404.html                # Not-found page
-│   ├── favicon.ico
-│   ├── robots.txt
-│   ├── filters/
-│   │   └── chooseLang.js       # Angular filter for language selection
-│   ├── images/                 # Static image assets (logo, doctor, etc.)
-│   ├── presets/
-│   │   ├── questions.js        # Predefined question data
-│   │   └── translations.js     # Language translation strings
+.
+├── app/                    # Main application source
+│   ├── filters/            # AngularJS filters (e.g., language chooser)
+│   ├── images/             # Image assets
+│   ├── presets/            # Predefined questions and translations
 │   ├── scripts/
-│   │   ├── app.js              # Main Angular module & route config
-│   │   ├── controllers/        # Page-level controllers
-│   │   │   ├── intro.js
-│   │   │   ├── language.js
-│   │   │   ├── patient-details.js
-│   │   │   ├── complaint.js
-│   │   │   ├── question.js
-│   │   │   ├── get-ready.js
-│   │   │   ├── conclusion.js
-│   │   │   └── report.js
-│   │   └── services/
-│   │       ├── questionServie.js  # Question management service
-│   │       ├── state.js           # App state management
-│   │       └── tts.js             # Text-to-speech service
-│   ├── styles/                 # SCSS stylesheets
-│   └── views/                  # HTML view templates (one per route)
-├── test/                       # Unit tests (Karma + Jasmine)
-├── config.json                 # Question definitions & app configuration
-├── Gruntfile.js                # Grunt task configuration
-├── package.json                # Node.js dev dependencies
-├── bower.json                  # Frontend dependencies
-├── .travis.yml                 # CI configuration (Travis CI)
-└── README.md                   # Project documentation
+│   │   ├── app.js          # Main AngularJS module & route definitions
+│   │   ├── controllers/    # Route controllers (intro, language, complaint, question, report, etc.)
+│   │   └── services/       # Shared services (state, question service, TTS)
+│   ├── styles/             # SCSS stylesheets
+│   ├── views/              # HTML templates for each route
+│   ├── index.html          # App entry point
+│   └── 404.html            # Error page
+├── test/                   # Unit tests (Karma + Jasmine)
+│   └── spec/controllers/   # Controller test specs
+├── config.json             # Question/answer configuration and app state defaults
+├── Gruntfile.js            # Grunt build, serve, test, and lint automation
+├── bower.json              # Frontend dependencies (Bower)
+├── package.json            # Node/dev dependencies and scripts
+├── .travis.yml             # CI configuration (Travis CI)
+└── README.md               # Project readme
 ```
 
 ---
 
-## Application Flow
-The app follows a step-by-step workflow guiding a user (doctor/patient) through:
-1. **Intro** — Welcome screen
-2. **Language** — Select patient and doctor languages
-3. **Patient Details** — Collect patient information
-4. **Complaint** — Select or describe the medical complaint
-5. **Question** — Structured Q&A based on complaint category
-6. **Get Ready** — Transition/preparation screen
-7. **Conclusion** — Summary of the session
-8. **Report** — Final output/report generation
+## Key Components
+
+### Application Flow (Routes)
+The app guides users through a structured workflow:
+1. `/intro` — Introduction screen
+2. `/language` — Language selection
+3. `/patient-details` — Enter patient information
+4. `/complaint` — Select medical complaint
+5. `/get-ready` — Preparation step
+6. `/question` — Dynamic medical Q&A
+7. `/conclusion` — Session conclusion
+8. `/report` — Final summary/report
+
+### Controllers (`app/scripts/controllers/`)
+| Controller | Purpose |
+|---|---|
+| `intro.js` | Handles the intro/welcome screen |
+| `language.js` | Language selection logic |
+| `patient-details.js` | Captures patient information |
+| `complaint.js` | Complaint selection |
+| `get-ready.js` | Pre-question preparation |
+| `question.js` | Drives the Q&A session |
+| `conclusion.js` | Wraps up the session |
+| `report.js` | Generates the final report |
+
+### Services (`app/scripts/services/`)
+| Service | Purpose |
+|---|---|
+| `state.js` | Manages shared application state |
+| `questionServie.js` | Handles question logic and flow |
+| `tts.js` | Text-to-speech support |
+
+### Configuration (`config.json`)
+Defines the full set of medical questions, their types, categories (e.g., Chest pain, Vomiting, Fever), possible answers, and default application state.
+
+### Presets (`app/presets/`)
+- `questions.js` — Predefined question sets
+- `translations.js` — Internationalization/translation strings
 
 ---
 
-## Configuration
-`config.json` defines:
-- **Question definitions** — Each question has an `id`, `type`, `title`, and array of `answers`
-- **Categories** — Medical symptom/topic categories
-- **Initial state** — Default `patientLanguage`, `doctorLanguage`, `categories`, and `answered` state
+## Tech Stack
+| Layer | Technology |
+|---|---|
+| Framework | AngularJS |
+| Build Tool | Grunt |
+| Package Manager | npm + Bower |
+| Testing | Karma + Jasmine |
+| CI | Travis CI |
+| Scaffolding | Yeoman (generator-angular v0.14.0) |
 
 ---
 
@@ -87,7 +92,7 @@ The app follows a step-by-step workflow guiding a user (doctor/patient) through:
 # Install dependencies
 npm install && bower install
 
-# Serve locally with live reload
+# Start development server
 grunt serve
 
 # Build for production
@@ -99,4 +104,4 @@ grunt test
 
 ---
 
-*This summary was auto-generated based on the repository structure and file contents.*
+*This summary was auto-generated based on the repository file structure and content.*
