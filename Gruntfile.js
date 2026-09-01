@@ -20,7 +20,7 @@ module.exports = function (grunt) {
   });
 
   // Configurable paths for the application
-  var appConfig = {
+  var app_config = {
     app: require('./bower.json').appPath || 'app',
     dist: 'dist'
   };
@@ -29,7 +29,7 @@ module.exports = function (grunt) {
   grunt.initConfig({
 
     // Project settings
-    yeoman: appConfig,
+    yeoman: app_config,
 
     // Watches files for changes and runs tasks based on the changed files
     watch: {
@@ -44,7 +44,7 @@ module.exports = function (grunt) {
           livereload: '<%= connect.options.livereload %>'
         }
       },
-      jsTest: {
+      js_test: {
         files: ['test/spec/{,*/}*.js'],
         tasks: ['newer:jshint:test', 'newer:jscs:test', 'karma']
       },
@@ -89,7 +89,7 @@ module.exports = function (grunt) {
                 '/app/styles',
                 connect.static('./app/styles')
               ),
-              connect.static(appConfig.app)
+              connect.static(app_config.app)
             ];
           }
         }
