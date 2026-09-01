@@ -17,7 +17,7 @@ describe('Controller: ConclusionCtrl', function () {
     });
   }));
 
-  it('should attach a list of awesomeThings to the scope', function () {
-    expect(ConclusionCtrl.awesomeThings.length).toBe(3);
+  it('should attach a list of featuredTechnologies to the scope', function () {
+    expect(ConclusionCtrl.featuredTechnologies.length).toBe(3);
   });
 });
