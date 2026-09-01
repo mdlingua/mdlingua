@@ -17,7 +17,7 @@ describe('Controller: QuestionCtrl', function () {
     });
   }));
 
-  it('should attach a list of awesomeThings to the scope', function () {
-    expect(QuestionCtrl.awesomeThings.length).toBe(3);
+  it('should attach a list of featuredTechnologies to the scope', function () {
+    expect(QuestionCtrl.featuredTechnologies.length).toBe(3);
   });
 });
