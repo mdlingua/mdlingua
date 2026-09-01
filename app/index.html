@@ -5,6 +5,35 @@
     <title></title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width">
+
+    <!-- Content Security Policy
+         Restricts resource loading to trusted origins only.
+         - default-src 'self'          : fallback; only load from same origin
+         - script-src 'self' GA        : allow local scripts + Google Analytics
+         - style-src 'self' 'unsafe-inline' : allow local CSS + Angular runtime inline styles (ng-show/hide)
+         - img-src 'self' data: GA     : allow local images, data URIs, GA beacon pixels
+         - connect-src 'self' GA       : allow XHR/fetch to self + GA analytics endpoint
+         - font-src 'self'             : only self-hosted fonts
+         - object-src 'none'           : block Flash/plugins entirely
+         - media-src 'self'            : allow local audio (SpeechSynthesis is browser-native, no media src needed)
+         - frame-src 'none'            : no iframes
+         - base-uri 'self'             : prevent base tag hijacking
+         - form-action 'self'          : prevent form submission to external URLs
+    -->
+    <meta http-equiv="Content-Security-Policy" content="
+      default-src 'self';
+      script-src 'self' https://www.google-analytics.com;
+      style-src 'self' 'unsafe-inline';
+      img-src 'self' data: https://www.google-analytics.com;
+      connect-src 'self' https://www.google-analytics.com https://stats.g.doubleclick.net;
+      font-src 'self';
+      object-src 'none';
+      media-src 'self';
+      frame-src 'none';
+      base-uri 'self';
+      form-action 'self';
+    ">
+
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
     <!-- build:css(.) styles/vendor.css -->
     <!-- bower:css -->
@@ -15,7 +44,13 @@
     <link rel="stylesheet" href="styles/main.css">
     <!-- endbuild -->
   </head>
-  <body ng-app="mdlinguaApp">
+  <!--
+    ng-csp: Enables AngularJS CSP-compatible mode.
+    Disables use of eval() and Function() constructor in Angular template compilation,
+    allowing script-src to omit 'unsafe-eval'. Minor trade-off: uses setTimeout-based
+    CSS animation detection instead of event-based detection.
+  -->
+  <body ng-app="mdlinguaApp" ng-csp>
     <!--[if lte IE 8]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
@@ -23,18 +58,6 @@
     <!-- Add your site or application content here -->
 
     <div class="crossed" ng-view></div>
-
-
-    <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
-     <script>
-       !function(A,n,g,u,l,a,r){A.GoogleAnalyticsObject=l,A[l]=A[l]||function(){
-       (A[l].q=A[l].q||[]).push(arguments)},A[l].l=+new Date,a=n.createElement(g),
-       r=n.getElementsByTagName(g)[0],a.src=u,r.parentNode.insertBefore(a,r)
-       }(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
-       ga('create', 'UA-XXXXX-X');
-       ga('send', 'pageview');
-    </script>
 
     <!-- build:js(.) scripts/vendor.js -->
     <!-- bower:js -->
@@ -66,6 +89,10 @@
     <script src="scripts/controllers/report.js"></script>
     <script src="scripts/controllers/patient-details.js"></script>
     <script src="scripts/controllers/get-ready.js"></script>
+
+    <!-- Google Analytics: extracted from inline script for CSP compliance.
+         Replace UA-XXXXX-X with your actual Google Analytics tracking ID. -->
+    <script src="scripts/analytics.js"></script>
     <!-- endbuild -->
-</body>
+  </body>
 </html>
