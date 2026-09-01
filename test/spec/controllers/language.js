@@ -17,7 +17,7 @@ describe('Controller: LanguageCtrl', function () {
     });
   }));
 
-  it('should attach a list of awesomeThings to the scope', function () {
-    expect(LanguageCtrl.awesomeThings.length).toBe(3);
+  it('should attach a list of featuredTechnologies to the scope', function () {
+    expect(LanguageCtrl.featuredTechnologies.length).toBe(3);
   });
 });

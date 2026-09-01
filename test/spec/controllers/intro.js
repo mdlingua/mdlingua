@@ -1,5 +1,4 @@
 'use strict';
-'use strict';
 
 describe('Controller: IntroCtrl', function () {
 
@@ -18,7 +17,7 @@ describe('Controller: IntroCtrl', function () {
     });
   }));
 
-  it('should attach a list of awesomeThings to the scope', function () {
-    expect(IntroCtrl.awesomeThings.length).toBe(3);
+  it('should attach a list of featuredTechnologies to the scope', function () {
+    expect(IntroCtrl.featuredTechnologies.length).toBe(3);
   });
 });

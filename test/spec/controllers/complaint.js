@@ -17,7 +17,7 @@ describe('Controller: ComplaintCtrl', function () {
     });
   }));
 
-  it('should attach a list of awesomeThings to the scope', function () {
-    expect(ComplaintCtrl.awesomeThings.length).toBe(3);
+  it('should attach a list of featuredTechnologies to the scope', function () {
+    expect(ComplaintCtrl.featuredTechnologies.length).toBe(3);
   });
 });

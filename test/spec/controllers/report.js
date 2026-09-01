@@ -17,7 +17,7 @@ describe('Controller: ReportCtrl', function () {
     });
   }));
 
-  it('should attach a list of awesomeThings to the scope', function () {
-    expect(ReportCtrl.awesomeThings.length).toBe(3);
+  it('should attach a list of featuredTechnologies to the scope', function () {
+    expect(ReportCtrl.featuredTechnologies.length).toBe(3);
   });
 });

@@ -17,7 +17,7 @@ describe('Controller: GetReadyCtrl', function () {
     });
   }));
 
-  it('should attach a list of awesomeThings to the scope', function () {
-    expect(GetReadyCtrl.awesomeThings.length).toBe(3);
+  it('should attach a list of featuredTechnologies to the scope', function () {
+    expect(GetReadyCtrl.featuredTechnologies.length).toBe(3);
   });
 });
